@@ -3,13 +3,12 @@ import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 import reactLogo from './assets/Ticket.svg'
 import './App.css'
 import { useRef } from 'react';
-import App from "./App";
 
 function Tickets() {
     const pdfExportComponent = useRef(null);
     const contentArea = useRef(null);
 
-    const onPdfExport= (event) => {
+    const onPdfExport= () => {
         savePDF(contentArea.current, { paperSize: "A4" });
     }
 
