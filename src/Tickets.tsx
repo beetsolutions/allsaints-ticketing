@@ -292,7 +292,7 @@ function Tickets() {
         <>
             {tickets.map((x, i) =>
                 <div key={i}>
-                    <div className="app-content" ref={contentArea}>
+                    <div id={"content-area"} align={"center"} className="app-content" ref={contentArea}>
                         <PDFExport ref={pdfExportComponent} paperSize="A4">
                             <div>
                                 <div className={"ticket"}>
