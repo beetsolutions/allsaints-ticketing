@@ -1,7 +1,7 @@
 {
+  "homepage": "https://beetsolutions.github.io/all-saints-tickets",
   "name": "all-saints-tickets",
   "version": "0.1.0",
-  "homepage": "https://beetsolutions.github.io/all-saints-tickets",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -20,9 +20,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
