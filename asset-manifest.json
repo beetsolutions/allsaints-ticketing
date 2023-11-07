@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/allsaints-ticketing/static/css/main.52daba69.css",
-    "main.js": "/allsaints-ticketing/static/js/main.0cd4ab59.js",
+    "main.js": "/allsaints-ticketing/static/js/main.6f17b27e.js",
     "static/js/787.d307de61.chunk.js": "/allsaints-ticketing/static/js/787.d307de61.chunk.js",
     "static/media/Ticket.svg": "/allsaints-ticketing/static/media/Ticket.9370d31566a7c983e7bd9345eb09a4be.svg",
     "index.html": "/allsaints-ticketing/index.html",
     "main.52daba69.css.map": "/allsaints-ticketing/static/css/main.52daba69.css.map",
-    "main.0cd4ab59.js.map": "/allsaints-ticketing/static/js/main.0cd4ab59.js.map",
+    "main.6f17b27e.js.map": "/allsaints-ticketing/static/js/main.6f17b27e.js.map",
     "787.d307de61.chunk.js.map": "/allsaints-ticketing/static/js/787.d307de61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.52daba69.css",
-    "static/js/main.0cd4ab59.js"
+    "static/js/main.6f17b27e.js"
   ]
 }
