@@ -1,7 +1,7 @@
 import QRCode from "react-qr-code";
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
-import reactLogo from './assets/Ticket.svg'
-import './App.css'
+import reactLogo from './../../assets/Ticket.svg'
+import './../../App.css'
 import { useRef } from 'react';
 
 function Tickets() {
@@ -9,6 +9,7 @@ function Tickets() {
     const contentArea = useRef(null);
 
     const onPdfExport= () => {
+        // @ts-ignore
         savePDF(contentArea.current, { paperSize: "A4" });
     }
 
@@ -292,7 +293,7 @@ function Tickets() {
         <>
             {tickets.map((x, i) =>
                 <div key={i}>
-                    <div id={"content-area"} align={"center"} className="app-content" ref={contentArea}>
+                    <div id={"content-area"} className="app-content" ref={contentArea}>
                         <PDFExport ref={pdfExportComponent} paperSize="A4">
                             <div>
                                 <div className={"ticket"}>
