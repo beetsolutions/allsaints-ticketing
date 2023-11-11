@@ -26,7 +26,7 @@ const customEnglishMessages: TranslationMessages = {
             detail: 'Ticket detail',
         }
     },
-    ticket: {
+    tickets: {
         list: {
             search: 'Search',
         },

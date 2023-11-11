@@ -1,13 +1,13 @@
 import PeopleIcon from '@mui/icons-material/People';
-import NewsCreate from './NewsCreate';
-import NewsEdit from './NewsEdit';
-import NewsList from './NewsList';
-import NewsShow from './NewsShow';
+import TicketsCreate from './TicketsCreate';
+import TicketsEdit from './TicketsEdit';
+import TicketsList from './TicketsList';
+import TicketsShow from './TicketsShow';
 
 export default {
-    list: NewsList,
-    create: NewsCreate,
-    edit: NewsEdit,
-    show: NewsShow,
+    list: TicketsList,
+    create: TicketsCreate,
+    edit: TicketsEdit,
+    show: TicketsShow,
     icon: PeopleIcon,
 };

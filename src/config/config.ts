@@ -2,9 +2,19 @@ import {AuthProvider, Options} from "react-admin";
 import { fetchUtils, DataProvider } from 'ra-core';
 import { stringify } from 'query-string';
 
-const apiUrl = 'http://localhost/allsaints/api/v1';
+const apiUrl = 'http://192.168.0.134/allsaints/api/v1';
 const httpClient = fetchUtils.fetchJson;
 
+const options : Options = {
+    user: {
+        authenticated: true,
+        token: `Bearer ${localStorage.getItem('auth')!!}`
+    },
+};
+
+if (!options.headers) {
+    options.headers = new Headers({ Accept: "application/json" });
+}
     export const dataProvider: DataProvider = ({
     getList: async (resource, params) => {
         const { page, perPage } = params.pagination;
@@ -15,12 +25,7 @@ const httpClient = fetchUtils.fetchJson;
             filter: JSON.stringify(params.filter),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        const options : Options = {
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            },
-        };
+
 
         const { json } = await httpClient(url, options);
 
@@ -32,12 +37,7 @@ const httpClient = fetchUtils.fetchJson;
 
     getOne: async (resource, params) => {
         const url = `${apiUrl}/${resource}/${params.id}`
-        const { json } = await httpClient(url, {
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            }
-        });
+        const { json } = await httpClient(url, options);
         return { data: json };
     },
 
@@ -46,12 +46,7 @@ const httpClient = fetchUtils.fetchJson;
             filter: JSON.stringify({ ids: params.ids }),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        const { json } = await httpClient(url, {
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            }
-        });
+        const { json } = await httpClient(url, options);
         return { data: json };
     },
 
@@ -67,12 +62,7 @@ const httpClient = fetchUtils.fetchJson;
             }),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        const { json, headers } = await httpClient(url, {
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            }
-        });
+        const { json, headers } = await httpClient(url, options);
         return {
             data: json
         };
@@ -82,10 +72,7 @@ const httpClient = fetchUtils.fetchJson;
         const { json } = await httpClient(`${apiUrl}/${resource}`, {
             method: 'POST',
             body: JSON.stringify(params.data),
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            }
+            ...options
         })
 
         return { data: json.data };
@@ -96,10 +83,7 @@ const httpClient = fetchUtils.fetchJson;
         const { json } = await httpClient(url, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            }
+            ...options
         })
         return { data: json };
     },
@@ -112,10 +96,7 @@ const httpClient = fetchUtils.fetchJson;
         const { json } = await httpClient(url, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            }
+            ...options
         })
         return { data: json };
     },
@@ -124,10 +105,7 @@ const httpClient = fetchUtils.fetchJson;
         const url = `${apiUrl}/${resource}/${params.id}`;
         const { json } = await httpClient(url, {
             method: 'DELETE',
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            }
+            ...options
         });
         return { data: json };
     },
@@ -140,10 +118,7 @@ const httpClient = fetchUtils.fetchJson;
         const { json } = await httpClient(url, {
             method: 'DELETE',
             body: JSON.stringify(params),
-            user: {
-                authenticated: true,
-                token: localStorage.getItem('auth')!!
-            }
+            ...options
         });
         return { data: json };
     },
@@ -161,10 +136,10 @@ let userIdentity = {
 export const authProvider: AuthProvider = {
     login: ({phoneNumber, otp}) => {
 
-        let url = 'http://localhost/allsaints/api/v1/sms/request';
+        let url = 'http://192.168.0.134/allsaints/api/v1/sms/request';
 
         if (phoneNumber && otp) {
-            url = 'http://localhost/allsaints/api/v1/sms/verify'
+            url = 'http://192.168.0.134/allsaints/api/v1/sms/verify'
         }
         const request = new Request(url, {
             method: 'POST',

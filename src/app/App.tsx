@@ -1,14 +1,14 @@
 import {Admin, Resource, CustomRoutes} from "react-admin";
 import {Route} from 'react-router';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
-import {Login, Layout, OtpPage} from './../components/layout';
+import {Login, Layout} from './../components/layout';
 import {Dashboard} from '../pages/dashboard/Dashboard';
 import Configuration from './../pages/configuration/Configuration';
 
 import {lightTheme} from '../components/layout/themes';
 import {dataProvider, authProvider} from '../config/config';
 import englishMessages from './../i18n/en';
-import news from './../pages/tickets';
+import tickets from './../pages/tickets';
 import Ticket from "../components/tickets/Ticket";
 import Tickets from "../components/tickets/Tickets";
 
@@ -38,25 +38,8 @@ const App = () => (
             <Route path="/ticket" element={<Ticket />} />
             <Route path="/sold-tickets" element={<Tickets />} />
         </CustomRoutes>
-        <Resource name="tickets" {...news} />
+        <Resource name="tickets" {...tickets} />
     </Admin>
 );
 
 export default App;
-
-
-// import './App.css'
-// import Routing from "./routes";
-// import { BrowserRouter as Router } from "react-router-dom"
-//
-// function App() {
-//     return (
-//         <>
-//             <Router basename={process.env.PUBLIC_URL}>
-//                 <Routing/>
-//             </Router>
-//         </>
-//     )
-// }
-//
-// export default App

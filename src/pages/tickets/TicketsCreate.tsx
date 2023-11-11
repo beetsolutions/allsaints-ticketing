@@ -18,10 +18,10 @@ const ConstitutionEditToolbar = ({permissions, ...props}) => {
 
     return (
         <Toolbar {...props}>
-            <SaveButton label="news.action.save_and_show"/>
+            <SaveButton label="tickets.action.save_and_show"/>
 
             <SaveButton
-                label="news.action.save_and_add"
+                label="tickets.action.save_and_add"
                 mutationOptions={{
                     onSuccess: data => {
                         console.log(data);
@@ -41,7 +41,7 @@ const ConstitutionEditToolbar = ({permissions, ...props}) => {
     );
 };
 
-const NewsCreate = () => {
+const TicketsCreate = () => {
     const {permissions} = usePermissions();
     return (
         <Create redirect="show">
@@ -50,24 +50,20 @@ const NewsCreate = () => {
                 warnWhenUnsavedChanges
                 toolbar={<ConstitutionEditToolbar permissions={permissions}/>}
             >
-                <FormTab label="news.form.summary" path="">
-                    <TextInput name="title" source="title" validate={[required()]}/>
-                    <TextInput name="author" source="author" validate={[required()]}/>
+                <FormTab label="tickets.form.summary" path="">
+                    <TextInput name="paymentStatus" source="paymentStatus" validate={[required()]}/>
+                    <TextInput name="usageStatus" source="usageStatus" validate={[required()]}/>
+                    <TextInput name="price" source="price" validate={[required()]}/>
+                    <TextInput name="type" source="type" validate={[required()]}/>
                     <RichTextInput
-                        name="headline"
-                        source="headline" toolbar={<RichTextInputToolbar size="large"/>}
+                        name="notes"
+                        source="notes" toolbar={<RichTextInputToolbar size="large"/>}
                     />
-                    <RichTextInput
-                        name="description"
-                        source="description" toolbar={<RichTextInputToolbar size="large"/>}
-                    />
-                    <TextInput name="videoLink" source="videoLink" defaultValue={null} />
-                    <TextInput name="imageLink" source="imageLink" defaultValue={null} />
                 </FormTab>
             </TabbedForm>
         </Create>
     );
 };
 
-export default NewsCreate;
+export default TicketsCreate;
 

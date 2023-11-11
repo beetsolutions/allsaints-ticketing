@@ -7,16 +7,16 @@ import {
     TextField,
 } from 'react-admin';
 
-import NewsEditEmbedded from './NewsEditEmbedded';
+import TicketsEditEmbedded from './TicketsEditEmbedded';
 
 const UserBulkActionButtons = (props : any) => (
     <BulkDeleteWithConfirmButton {...props} />
 );
 
-const NewsList = () => {
+const TicketsList = () => {
     return (
         <List
-            sort={{ field: 'author', order: 'ASC' }}
+            sort={{ field: 'usageStatus', order: 'ASC' }}
         >
             {useMediaQuery((theme: Theme) => theme.breakpoints.down('md')) ? (
                 <SimpleList
@@ -24,19 +24,20 @@ const NewsList = () => {
                 />
             ) : (
                 <Datagrid
-                    expand={<NewsEditEmbedded />}
+                    expand={<TicketsEditEmbedded />}
                     bulkActionButtons={<UserBulkActionButtons />}
                     optimized
                 >
                     <TextField source="id" />
-                    <TextField source="author" />
-                    <TextField source="headline" />
-                    <TextField source="videoLink" />
-                    <TextField source="imageLink" />
+                    <TextField source="paymentStatus" />
+                    <TextField source="usageStatus" />
+                    <TextField source="type" />
+                    <TextField source="price" />
+                    <TextField source="notes" />
                 </Datagrid>
             )}
         </List>
     );
 };
 
-export default NewsList;
+export default TicketsList;
