@@ -1,0 +1,122 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.ticket {
+  padding: 2em;
+}
+
+.ticket-number {
+  padding: 2em;
+  position: relative;
+  top: -200px;
+  left: 186px;
+  font-size: small;
+  color: #ffda7b;
+}
+
+@media only screen and (max-width: 768px) {
+  .ticket-number {
+    top: -140px;
+    left: 106px;
+  }
+}
+
+.ticket-qr-code {
+  padding: 2em;
+  position: relative;
+  top: -300px;
+  right: 232px;
+}
+
+@media only screen and (max-width: 768px) {
+  .ticket-qr-code {
+    top: -230px;
+    right: 14px;
+    height: 150px;
+    width: 140px;
+  }
+}
+
+.qr-code {
+  height: 54px;
+  width: 54px;
+}
+
+@media only screen and (max-width: 768px) {
+  .qr-code {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.button {
+  padding: 2em;
+  position: absolute;
+  top: 0;
+  margin-top: 10px;
+  left: 688px;
+}
+
+
+.app-content {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.page-container {
+  margin: 1em;
+}
+
+.button-area {
+  margin: 1em;
+}
+
+.App-link {
+  color: #61dafb;
+}

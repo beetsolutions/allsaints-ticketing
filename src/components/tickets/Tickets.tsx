@@ -1,7 +1,7 @@
 import QRCode from "react-qr-code";
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 import reactLogo from './../../assets/Ticket.svg'
-import './../../App.css'
+import '../../app/App.css'
 import { useRef } from 'react';
 
 function Tickets() {
