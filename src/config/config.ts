@@ -15,9 +15,9 @@ const options : Options = {
     },
 };
 
-if (!options.headers) {
-    options.headers = new Headers({ Accept: "application/json" });
-}
+// if (!options.headers) {
+//     options.headers = new Headers({ Accept: "application/json" });
+// }
     export const dataProvider: DataProvider = ({
     getList: async (resource, params) => {
         const { page, perPage } = params.pagination;
