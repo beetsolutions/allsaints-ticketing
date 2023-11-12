@@ -2,7 +2,7 @@ import {AuthProvider, Options} from "react-admin";
 import { fetchUtils, DataProvider } from 'ra-core';
 import { stringify } from 'query-string';
 
-const apiUrl = 'http://ec2-18-134-34-192.eu-west-2.compute.amazonaws.com/allsaints/api/v1';
+const apiUrl = 'https://ec2-18-134-34-192.eu-west-2.compute.amazonaws.com/allsaints/api/v1';
 const httpClient = fetchUtils.fetchJson;
 
 const options : Options = {
@@ -136,10 +136,10 @@ let userIdentity = {
 export const authProvider: AuthProvider = {
     login: ({phoneNumber, otp}) => {
 
-        let url = 'http://ec2-18-134-34-192.eu-west-2.compute.amazonaws.com/allsaints/api/v1/sms/request';
+        let url = 'https://ec2-18-134-34-192.eu-west-2.compute.amazonaws.com/allsaints/api/v1/sms/request';
 
         if (phoneNumber && otp) {
-            url = 'http://ec2-18-134-34-192.eu-west-2.compute.amazonaws.com/allsaints/api/v1/sms/verify'
+            url = 'https://ec2-18-134-34-192.eu-west-2.compute.amazonaws.com/allsaints/api/v1/sms/verify'
         }
         const request = new Request(url, {
             method: 'POST',
