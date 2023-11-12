@@ -2,7 +2,7 @@ import {AuthProvider, Options} from "react-admin";
 import { fetchUtils, DataProvider } from 'ra-core';
 import { stringify } from 'query-string';
 
-const host = "https://web-production-dea6.up.railway.app/http://ec2-18-134-34-192.eu-west-2.compute.amazonaws.com/"
+const host = "https://web-production-dea6.up.railway.app/http://ec2-52-56-116-147.eu-west-2.compute.amazonaws.com:4545/"
 
 const apiUrl = host + 'allsaints/api/v1';
 const httpClient = fetchUtils.fetchJson;
@@ -143,10 +143,11 @@ export const authProvider: AuthProvider = {
         if (phoneNumber && otp) {
             url =  host + 'allsaints/api/v1/sms/verify'
         }
+
         const request = new Request(url, {
             method: 'POST',
             body: JSON.stringify({phoneNumber, otp}),
-            headers: new Headers({'Content-Type': 'application/json'})
+            headers: new Headers({'Content-Type': 'application/json'},)
         });
 
         return fetch(request)
