@@ -67,7 +67,7 @@ export const lightTheme = {
                     '&.RaMenuItemLink-active': {
                         borderLeft: '3px solid #f5f5f5',
                         color: '#fff',
-                        backgroundColor: '#242a38',
+                        backgroundColor: '#3a4b70',
                     },
                     '& .RaMenuItemLink-icon': {
                         color: '#f5f5f5',

@@ -27,7 +27,10 @@ const Menu = ({dense = false}: MenuProps) => {
                         duration: theme.transitions.duration.leavingScreen,
                     }),
                 height: "100%",
-                backgroundColor: '#0b1228',
+                backgroundColor: theme =>
+                        theme.palette.mode === 'dark'
+                            ? '#6e6213'
+                            : '#1ba110'
             }}
         >
             <DashboardMenuItem

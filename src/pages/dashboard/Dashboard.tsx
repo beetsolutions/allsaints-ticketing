@@ -1,39 +1,23 @@
 import {Grid} from '@mui/material';
-
 import {Welcome} from './Welcome';
-
-import MonthlyRevenue from './MonthlyRevenue';
-import NewMembers from "./NewMembers";
+import NumberCard from "./NumberCard";
+import MoneyCard from './MoneyCard';
 
 export const Dashboard = () => (
     <Grid container spacing={2} mt={1}>
         <Grid item xs={12} md={2}>
-            <MonthlyRevenue title={'pos.dashboard.monthly_revenue'} value={"£300,000"}/>
+            <NumberCard value={"300"} title={'pos.dashboard.venue_capacity'}/>
         </Grid>
         <Grid item xs={12} md={2}>
-            <MonthlyRevenue title={'pos.dashboard.budget'} value={"£300,000"}/>
+            <NumberCard value={"114"} title={'pos.dashboard.tickets_sold'}/>
         </Grid>
         <Grid item xs={12} md={2}>
-            <NewMembers value={"30"}/>
+            <NumberCard title={'pos.dashboard.tickets_remaining'} value={"186"}/>
         </Grid>
         <Grid item xs={12} md={2}>
-            <MonthlyRevenue title={'pos.dashboard.contributions'} value={"£1000"}/>
+            <MoneyCard title={'pos.dashboard.money_collected'} value={"TBC"}/>
         </Grid>
-        <Grid item xs={12} md={2}>
-        </Grid>
-        <Grid item xs={12} md={2}>
-
-        </Grid>
-        <Grid item xs={12} md={3}>
-            <Welcome/>
-        </Grid>
-        <Grid item xs={12} md={3}>
-            <Welcome/>
-        </Grid>
-        <Grid item xs={12} md={3}>
-            <Welcome/>
-        </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} >
             <Welcome/>
         </Grid>
     </Grid>

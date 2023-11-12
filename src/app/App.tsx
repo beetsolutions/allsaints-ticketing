@@ -22,7 +22,7 @@ const i18nProvider = polyglotI18nProvider(locale => {
 
 const App = () => (
     <Admin
-        title="All Saints Ticketing"
+        title=""
         authProvider={authProvider}
         dataProvider={dataProvider}
         loginPage={Login}

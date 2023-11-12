@@ -1,4 +1,4 @@
-import CurrencyPoundIcon from '@mui/icons-material/CurrencyPound';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import {useTranslate} from 'react-admin';
 
 import CardWithIcon from './CardWithIcon';
@@ -8,17 +8,17 @@ interface Props {
     title: string;
 }
 
-const MonthlyRevenue = (props: Props) => {
+const NumberCard = (props: Props) => {
     const {value, title} = props;
     const translate = useTranslate();
     return (
         <CardWithIcon
-            to="/commands"
-            icon={CurrencyPoundIcon}
+            to="#"
+            icon={GroupAddIcon}
             title={translate(title)}
             subtitle={value}
         />
     );
 };
 
-export default MonthlyRevenue;
+export default NumberCard;

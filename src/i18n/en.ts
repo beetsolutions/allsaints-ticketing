@@ -13,10 +13,10 @@ const customEnglishMessages: TranslationMessages = {
             dark: 'Dark',
         },
         dashboard: {
-            monthly_revenue: 'Monthly revenue',
-            new_customer: 'New members',
-            budget: 'Budget',
-            contributions: 'Contributions',
+            tickets_sold: 'Number of tickets sold',
+            money_collected: 'Money collected',
+            tickets_remaining: 'Remaining tickets',
+            venue_capacity: 'Venue capacity',
         },
     },
     resources: {
