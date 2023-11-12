@@ -2,17 +2,13 @@ import {
     Typography,
     Card,
     CardContent,
-    CardActions,
-    Button,
 } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import CodeIcon from '@mui/icons-material/Code';
 
 export const Welcome = () => {
     return (
         <Card
             sx={{
-                background: `#c5dedd`,
+                background: `#cfd3cc`,
                 color: 'rgba(0, 0, 0, 0.87)',
                 padding: '1em',
                 marginBottom: '1em',
@@ -32,18 +28,26 @@ export const Welcome = () => {
             }}
         >
             <CardContent>
+                <Typography align={'left'} variant="h3" gutterBottom>
+                    Instructions
+                </Typography>
                 <Typography align={'left'} variant="h5" gutterBottom>
-                    CRM demo
+                    Rules of selling a ticket
                 </Typography>
                 <Typography align={'left'} gutterBottom>
-                    This app runs in the browser, and relies on a mock REST API.
-                    Feel free to explore and modify the data - it's local to
-                    your computer, and will reset each time you reload.
+                    1.) Click on the tickets menu on the left.
                 </Typography>
                 <Typography align={'left'} gutterBottom>
-                    It was built using react-admin, an open-source framework.
-                    The code for this demo is also open-source. Reading it is a
-                    great way to learn react-admin!
+                    2.) You will see a list of tickets.
+                </Typography>
+                <Typography align={'left'} gutterBottom>
+                    3.) Select a ticket with Payment status 'AVAILABLE'
+                </Typography>
+                <Typography align={'left'} gutterBottom>
+                    4.) Edit the ticket status to 'SOLD'
+                </Typography>
+                <Typography align={'left'} gutterBottom>
+                    5.) Save it and you have made a sale.
                 </Typography>
             </CardContent>
         </Card>

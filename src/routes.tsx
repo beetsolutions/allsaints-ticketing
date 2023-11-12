@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import Tickets from "./components/tickets/Tickets";
 import Ticket from "./components/tickets/Ticket";
-import LoginPage from "./components/login/LoginPage";
 
 const Routing = () => {
     return (

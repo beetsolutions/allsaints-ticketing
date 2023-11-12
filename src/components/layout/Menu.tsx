@@ -30,7 +30,7 @@ const Menu = ({dense = false}: MenuProps) => {
                 backgroundColor: theme =>
                         theme.palette.mode === 'dark'
                             ? '#6e6213'
-                            : '#1ba110'
+                            : '#420b6e'
             }}
         >
             <DashboardMenuItem

@@ -17,7 +17,8 @@ export const Dashboard = () => (
         <Grid item xs={12} md={2}>
             <MoneyCard title={'pos.dashboard.money_collected'} value={"TBC"}/>
         </Grid>
-        <Grid item xs={12} >
+        <Grid item xs={12} />
+        <Grid item xs={12} md={4}>
             <Welcome/>
         </Grid>
     </Grid>
