@@ -3,7 +3,7 @@ import { fetchUtils, DataProvider } from 'ra-core';
 import { stringify } from 'query-string';
 
 //const host = "http://ec2-52-56-116-147.eu-west-2.compute.amazonaws.com:4545/"
-const host = "https://web-production-dea6.up.railway.app/http://ec2-52-56-116-147.eu-west-2.compute.amazonaws.com:4545/"
+const host = "https://web-production-dea6.up.railway.app/ec2-52-56-116-147.eu-west-2.compute.amazonaws.com:4545/"
 
 const apiUrl = host + 'allsaints/api/v1';
 const httpClient = fetchUtils.fetchJson;
