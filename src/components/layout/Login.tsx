@@ -40,40 +40,48 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (auth: FormValues) => {
-        if (auth.phoneNumber) {
-            setPhoneNumber(auth.phoneNumber)
-        }
-        setLoading(true);
-        login(auth)
-            .then((value: AuthValues) => {
-                if (value.path == 'dashboard') {
-                    navigate('/');
-                } else {
-                    setPerformOtp(true);
+        const number =  auth.phoneNumber;
+
+        if (number === '+447459438446' || number === '+447366563666' || number === '+447756710982' || number === '+447586746998') {
+            if (auth.phoneNumber) {
+                setPhoneNumber(auth.phoneNumber)
+            }
+            setLoading(true);
+            login(auth)
+                .then((value: AuthValues) => {
+                    if (value.path == 'dashboard') {
+                        navigate('/');
+                    } else {
+                        setPerformOtp(true);
+                        setLoading(false);
+                    }
+                })
+                .catch((error: Error) => {
                     setLoading(false);
-                }
-            })
-            .catch((error: Error) => {
-            setLoading(false);
-            notify(
-                typeof error === 'string'
-                    ? error
-                    : typeof error === 'undefined' || !error.message
-                        ? 'This is a login error'
-                        : error.message,
-                {
-                    type: 'warning',
-                    messageArgs: {
-                        _:
-                            typeof error === 'string'
-                                ? error
-                                : error && error.message
-                                    ? error.message
-                                    : undefined,
-                    },
-                }
-            );
-        });
+                    notify(
+                        typeof error === 'string'
+                            ? error
+                            : typeof error === 'undefined' || !error.message
+                                ? 'This is a login error'
+                                : error.message,
+                        {
+                            type: 'warning',
+                            messageArgs: {
+                                _:
+                                    typeof error === 'string'
+                                        ? error
+                                        : error && error.message
+                                            ? error.message
+                                            : undefined,
+                            },
+                        }
+                    );
+                });
+        } else {
+            notify('You are not authorized to use this application. ', {
+                type: 'error',
+            });
+        }
     };
 
     return (
