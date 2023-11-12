@@ -147,7 +147,7 @@ export const authProvider: AuthProvider = {
 
         const request = new Request(url, {
             method: 'POST',
-            body: JSON.stringify({phoneNumber, otp}))
+            body: JSON.stringify({phoneNumber, otp})
         });
 
         return fetch(request)
