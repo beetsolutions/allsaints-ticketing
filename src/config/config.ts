@@ -86,7 +86,7 @@ if (!options.headers) {
             headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
         })
 
-        return { data: json.data };
+        return { 'data': json.data };
     },
 
     update: async (resource, params) => {
@@ -96,7 +96,8 @@ if (!options.headers) {
             body: JSON.stringify(params.data),
             headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
         })
-        return { data: json };
+
+        return { 'data': json.data };
     },
 
     updateMany: async (resource, params) => {
@@ -172,6 +173,8 @@ export const authProvider: AuthProvider = {
                             localStorage.setItem('auth', auth.data.jwt);
                             if (auth.data.firstName)
                                 localStorage.setItem('firstName', auth.data.firstName);
+                            if (auth.data.id)
+                                localStorage.setItem('id', String(auth.data.id));
                             if (auth.data.lastName)
                                 localStorage.setItem('lastName', auth.data.lastName);
                             if (auth.data.profileUrl)
