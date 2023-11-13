@@ -146,7 +146,7 @@ const Login = () => {
                                             label="Phone Number"
                                             source="phoneNumber"
                                             name="phoneNumber"
-                                            value={localStorage.getItem("tempNumber")}
+                                            defaultValue={phoneNumber}
                                             autoComplete="phoneNumber"
                                             autoFocus
                                         />

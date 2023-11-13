@@ -17,7 +17,6 @@ const options : Options = {
 
 if (!options.headers) {
     options.headers = new Headers({ Accept: "application/json" });
-    options.headers = new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` });
 }
     export const dataProvider: DataProvider = ({
     getList: async (resource, params) => {
@@ -31,7 +30,9 @@ if (!options.headers) {
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
 
-        const { json } = await httpClient(url, options);
+        const { json } = await httpClient(url, {
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
+        });
 
         return {
             data: json.data,
@@ -41,7 +42,9 @@ if (!options.headers) {
 
     getOne: async (resource, params) => {
         const url = `${apiUrl}/${resource}/${params.id}`
-        const { json } = await httpClient(url, options);
+        const { json } = await httpClient(url, {
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
+        });
         return { data: json };
     },
 
@@ -50,7 +53,9 @@ if (!options.headers) {
             filter: JSON.stringify({ ids: params.ids }),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        const { json } = await httpClient(url, options);
+        const { json } = await httpClient(url, {
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
+        });
         return { data: json };
     },
 
@@ -66,7 +71,9 @@ if (!options.headers) {
             }),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        const { json, headers } = await httpClient(url, options);
+        const { json, headers } = await httpClient(url, {
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
+        });
         return {
             data: json
         };
@@ -76,7 +83,7 @@ if (!options.headers) {
         const { json } = await httpClient(`${apiUrl}/${resource}`, {
             method: 'POST',
             body: JSON.stringify(params.data),
-            ...options
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
         })
 
         return { data: json.data };
@@ -87,7 +94,7 @@ if (!options.headers) {
         const { json } = await httpClient(url, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-            ...options
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
         })
         return { data: json };
     },
@@ -100,7 +107,7 @@ if (!options.headers) {
         const { json } = await httpClient(url, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-            ...options
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
         })
         return { data: json };
     },
@@ -109,7 +116,7 @@ if (!options.headers) {
         const url = `${apiUrl}/${resource}/${params.id}`;
         const { json } = await httpClient(url, {
             method: 'DELETE',
-            ...options
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
         });
         return { data: json };
     },
@@ -122,7 +129,7 @@ if (!options.headers) {
         const { json } = await httpClient(url, {
             method: 'DELETE',
             body: JSON.stringify(params),
-            ...options
+            headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
         });
         return { data: json };
     },
@@ -145,8 +152,6 @@ export const authProvider: AuthProvider = {
         if (phoneNumber && otp) {
             url =  host + 'v1/sms/verify'
         }
-
-        localStorage.setItem("tempNumber", phoneNumber)
 
         const request = new Request(url, {
             method: 'POST',
