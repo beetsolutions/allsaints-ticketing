@@ -146,6 +146,8 @@ export const authProvider: AuthProvider = {
             url =  host + 'v1/sms/verify'
         }
 
+        localStorage.setItem("tempNumber", phoneNumber)
+
         const request = new Request(url, {
             method: 'POST',
             body: JSON.stringify({phoneNumber, otp}),
