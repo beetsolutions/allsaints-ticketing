@@ -42,7 +42,7 @@ const Login = () => {
     const handleSubmit = (auth: FormValues) => {
         const number =  auth.phoneNumber;
 
-        if (number === '+447459438446' || number === '+447366563666' || number === '+447756710982' || number === '+447586746998') {
+        if (number === '+447411431289' || number === '+447366563666' || number === '+447756710982' || number === '+447586746998') {
             if (auth.phoneNumber) {
                 setPhoneNumber(auth.phoneNumber)
             }
