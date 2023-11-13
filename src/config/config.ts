@@ -17,6 +17,7 @@ const options : Options = {
 
 if (!options.headers) {
     options.headers = new Headers({ Accept: "application/json" });
+    options.headers = new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` });
 }
     export const dataProvider: DataProvider = ({
     getList: async (resource, params) => {
