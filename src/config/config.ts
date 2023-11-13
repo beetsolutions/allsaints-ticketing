@@ -139,10 +139,10 @@ let userIdentity = {
 export const authProvider: AuthProvider = {
     login: ({phoneNumber, otp}) => {
 
-        let url = host + '/v1/sms/request';
+        let url = host + 'v1/sms/request';
 
         if (phoneNumber && otp) {
-            url =  host + '/v1/sms/verify'
+            url =  host + 'v1/sms/verify'
         }
 
         const request = new Request(url, {
