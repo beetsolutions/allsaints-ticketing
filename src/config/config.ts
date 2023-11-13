@@ -145,19 +145,10 @@ export const authProvider: AuthProvider = {
             url =  host + 'allsaints/api/v1/sms/verify'
         }
 
-        const body = {
-            'phoneNumber': phoneNumber,
-            'otp': otp,
-        };
         const request = new Request(url, {
             method: 'POST',
-
-            headers: {
-                'Accept': 'application/json, text/plain',
-                'Content-Type': 'application/json;charset=UTF-8'
-            },
-            mode: 'no-cors',
-            body: body,
+            body: JSON.stringify({phoneNumber, otp}),
+            headers: new Headers({'Content-Type': 'application/json'},)
         });
 
         return fetch(request)
