@@ -30,7 +30,6 @@ const App = () => (
         dashboard={Dashboard}
         i18nProvider={i18nProvider}
         disableTelemetry
-        theme={defaultTheme}
     >
         <CustomRoutes>
             <Route path="/configuration" element={<Configuration/>}/>

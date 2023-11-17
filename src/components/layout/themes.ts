@@ -86,6 +86,14 @@ export const lightTheme = {
                 },
             },
         },
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    border: '1px solid #e0e0e3',
+                    backgroundClip: 'padding-box',
+                },
+            },
+        },
         MuiAppBar: {
             styleOverrides: {
                 colorSecondary: {
