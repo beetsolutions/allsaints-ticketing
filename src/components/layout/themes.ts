@@ -37,5 +37,28 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
- 
+    palette: {
+        primary: {
+            main: '#4f3cc9',
+        },
+        secondary: {
+            light: '#5f5fc4',
+            main: '#283593',
+            dark: '#001064',
+            contrastText: '#fff',
+        },
+        background: {
+            default: '#fcfcfe',
+        },
+        mode: 'light' as 'light',
+    },
+    shape: {
+        borderRadius: 10,
+    },
+    sidebar: {
+        width: 200,
+    },
+    components: {
+        ...defaultTheme.components,
+    }
 };
