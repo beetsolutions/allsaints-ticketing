@@ -1,4 +1,4 @@
-import {Admin, Resource, CustomRoutes} from "react-admin";
+import {Admin, Resource, CustomRoutes, defaultTheme} from "react-admin";
 import {Route} from 'react-router';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
 import {Login, Layout} from './../components/layout';
@@ -30,7 +30,7 @@ const App = () => (
         dashboard={Dashboard}
         i18nProvider={i18nProvider}
         disableTelemetry
-        theme={lightTheme}
+        theme={defaultTheme}
     >
         <CustomRoutes>
             <Route path="/configuration" element={<Configuration/>}/>

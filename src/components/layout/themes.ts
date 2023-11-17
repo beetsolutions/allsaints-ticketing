@@ -60,5 +60,49 @@ export const lightTheme = {
     },
     components: {
         ...defaultTheme.components,
-    }
+        RaMenuItemLink: {
+            styleOverrides: {
+                root: {
+                    color: '#f5f5f5',
+                    '&.RaMenuItemLink-active': {
+                        borderLeft: '3px solid #f5f5f5',
+                        color: '#fff',
+                        backgroundColor: '#585c65',
+                    },
+                    '& .RaMenuItemLink-icon': {
+                        color: '#f5f5f5',
+                    },
+                },
+            },
+        },
+        MuiPaper: {
+            styleOverrides: {
+                elevation1: {
+                    boxShadow: 'none',
+                },
+                root: {
+                    border: '1px solid #e0e0e3',
+                    backgroundClip: 'padding-box',
+                },
+            },
+        },
+        MuiAppBar: {
+            styleOverrides: {
+                colorSecondary: {
+                    color: '#808080',
+                    backgroundColor: '#fff',
+                },
+            },
+        },
+        MuiLinearProgress: {
+            styleOverrides: {
+                colorPrimary: {
+                    backgroundColor: '#f5f5f5',
+                },
+                barColorPrimary: {
+                    backgroundColor: '#d7d7d7',
+                },
+            },
+        },
+    },
 };
