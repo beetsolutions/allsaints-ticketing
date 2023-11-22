@@ -27,6 +27,7 @@ const TicketsList = () => {
                     secondaryText={record => record.id}
                     primaryText={record => record.price}
                     linkType={record => record.paymentStatus!== 'SOLD' ? "edit" : "show"} 
+                    rowStyle={postRowStyle}
                 />
             ) : (
                 <Datagrid
