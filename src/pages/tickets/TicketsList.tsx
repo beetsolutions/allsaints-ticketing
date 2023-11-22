@@ -21,6 +21,9 @@ const TicketsList = () => {
         >
             {useMediaQuery((theme: Theme) => theme.breakpoints.down('md')) ? (
                 <Datagrid
+                    expand={<TicketsEditEmbedded />}
+                    bulkActionButtons={<UserBulkActionButtons />}
+                    optimized
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
