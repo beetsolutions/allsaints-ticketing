@@ -1,25 +1,16 @@
 import { useMediaQuery, Theme } from '@mui/material';
 import {
-    BulkDeleteWithConfirmButton,
     Datagrid,
     List,
-    SimpleList,
     TextField,
-    Button
+    Button,
+    useRecordContext,
 } from 'react-admin';
 
 import TicketsEditEmbedded from './TicketsEditEmbedded';
 
-const UserBulkActionButtons = (props : any) => (
-    <BulkDeleteWithConfirmButton {...props} />
-);
-
-const postRowSx = (record: any, index:number) => (
-        record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : <></>
-);
-
-
 const TicketsList = () => {
+    const record = useRecordContext();
     return (
         <List
             sort={{ field: 'usageStatus', order: 'ASC' }}
@@ -32,7 +23,7 @@ const TicketsList = () => {
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                
+                {record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : null}
             </Datagrid>
             ) : (
                 <Datagrid
@@ -45,6 +36,7 @@ const TicketsList = () => {
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
+                    {record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : null}
                 </Datagrid>
             )}
         </List>
