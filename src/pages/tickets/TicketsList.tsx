@@ -24,9 +24,7 @@ const TicketsList = () => {
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                <TextField source="usageStatus" />
                 <TextField source="type" />
-                <TextField source="price" />
             </Datagrid>
             ) : (
                 <Datagrid
