@@ -9,6 +9,7 @@ import {
 } from 'react-admin';
 
 import TicketsEditEmbedded from './TicketsEditEmbedded';
+import { spawn } from 'child_process';
 
 const TicketsList = () => {
     const record = useRecordContext();
@@ -37,7 +38,7 @@ const TicketsList = () => {
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
-                    <WithRecord label="download" render={record => record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : null} />
+                    <WithRecord label="download" render={record =>  <span>{JSON.stringify(record)}</span>} />
                 </Datagrid>
             )}
         </List>
