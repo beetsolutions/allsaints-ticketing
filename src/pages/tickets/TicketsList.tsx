@@ -14,6 +14,10 @@ const UserBulkActionButtons = (props : any) => (
     <BulkDeleteWithConfirmButton {...props} />
 );
 
+const postRowSx = (record: any, index:number) => (
+        record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : <></>
+);
+
 
 const TicketsList = () => {
     return (
@@ -24,25 +28,25 @@ const TicketsList = () => {
                 <Datagrid
                     expand={<TicketsEditEmbedded />}
                     optimized
-                    isRowSelectable={row => false}    
+                    bulkActionButtons={false}  
+                    rowSx={postRowSx}    
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                <Button  label='Download'/>
+                
             </Datagrid>
             ) : (
                 <Datagrid
                     expand={<TicketsEditEmbedded />}
-                    bulkActionButtons={<UserBulkActionButtons />}
                     optimized
-                    isRowSelectable={row => false}    
+                    bulkActionButtons={false}  
+                    rowSx={postRowSx}
                 >
                     <TextField source="id" />
                     <TextField source="paymentStatus" />
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
-                    <Button  label='Download'/>
                 </Datagrid>
             )}
         </List>
