@@ -29,7 +29,6 @@ const TicketsList = () => {
                     expand={<TicketsEditEmbedded />}
                     optimized
                     bulkActionButtons={false}  
-                    rowSx={postRowSx}    
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
@@ -40,7 +39,6 @@ const TicketsList = () => {
                     expand={<TicketsEditEmbedded />}
                     optimized
                     bulkActionButtons={false}  
-                    rowSx={postRowSx}
                 >
                     <TextField source="id" />
                     <TextField source="paymentStatus" />
