@@ -33,6 +33,7 @@ const TicketsList = () => {
                     expand={<TicketsEditEmbedded />}
                     bulkActionButtons={<UserBulkActionButtons />}
                     optimized
+                    isRowSelectable={row => false}    
                 >
                     <TextField source="id" />
                     <TextField source="paymentStatus" />
