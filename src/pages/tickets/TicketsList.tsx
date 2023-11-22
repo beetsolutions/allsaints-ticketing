@@ -13,6 +13,10 @@ const UserBulkActionButtons = (props : any) => (
     <BulkDeleteWithConfirmButton {...props} />
 );
 
+const postRowStyle = (record: any, index: number) => ({
+    backgroundColor: record.nb_views >= 500 ? '#efe' : 'white',
+});
+
 const TicketsList = () => {
     return (
         <List
@@ -21,6 +25,8 @@ const TicketsList = () => {
             {useMediaQuery((theme: Theme) => theme.breakpoints.down('md')) ? (
                 <SimpleList
                     secondaryText={record => record.id}
+                    primaryText={record => record.price}
+                    linkType={record => record.paymentStatus!== 'SOLD' ? "edit" : "show"} 
                 />
             ) : (
                 <Datagrid
