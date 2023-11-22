@@ -29,6 +29,7 @@ const App = () => (
         layout={Layout}
         dashboard={Dashboard}
         i18nProvider={i18nProvider}
+        theme={lightTheme}
         disableTelemetry
     >
         <CustomRoutes>

@@ -8,7 +8,7 @@ export const darkTheme = {
         secondary: {
             main: '#FBBA72',
         },
-        mode: 'dark' as 'dark'
+        mode: 'dark' as 'dark', // Switching the dark mode on is a single property value change.
     },
     sidebar: {
         width: 200,
@@ -67,7 +67,7 @@ export const lightTheme = {
                     '&.RaMenuItemLink-active': {
                         borderLeft: '3px solid #f5f5f5',
                         color: '#fff',
-                        backgroundColor: '#585c65',
+                        backgroundColor: '#242a38',
                     },
                     '& .RaMenuItemLink-icon': {
                         color: '#f5f5f5',
@@ -80,14 +80,6 @@ export const lightTheme = {
                 elevation1: {
                     boxShadow: 'none',
                 },
-                root: {
-                    border: '1px solid #e0e0e3',
-                    backgroundClip: 'padding-box',
-                },
-            },
-        },
-        MuiTableCell: {
-            styleOverrides: {
                 root: {
                     border: '1px solid #e0e0e3',
                     backgroundClip: 'padding-box',
