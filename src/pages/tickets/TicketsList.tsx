@@ -20,7 +20,7 @@ const TicketsList = () => {
         >
             {useMediaQuery((theme: Theme) => theme.breakpoints.down('md')) ? (
                 <SimpleList
-                    primaryText={record => record.id}
+                    secondaryText={record => record.id}
                 />
             ) : (
                 <Datagrid
