@@ -38,7 +38,7 @@ const TicketsList = () => {
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
-                    <WithRecord label="download" render={record =>  <span>{JSON.stringify(record)}</span>} />
+                    <WithRecord label="download" render={record => record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : null} />
                 </Datagrid>
             )}
         </List>
