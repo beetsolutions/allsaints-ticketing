@@ -14,7 +14,7 @@ const UserBulkActionButtons = (props : any) => (
 );
 
 const postRowStyle = (record: any, index: number) => ({
-    backgroundColor: record.nb_views >= 500 ? '#efe' : 'white',
+    backgroundColor: record.paymentStatus!== 'SOLD' ? '#efe' : '#e2e2e2',
 });
 
 const TicketsList = () => {
