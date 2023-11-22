@@ -5,6 +5,7 @@ import {
     TextField,
     Button,
     useRecordContext,
+    WithRecord
 } from 'react-admin';
 
 import TicketsEditEmbedded from './TicketsEditEmbedded';
@@ -23,7 +24,7 @@ const TicketsList = () => {
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                {record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : null}
+                <WithRecord label="download" render={record => record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : null} />
             </Datagrid>
             ) : (
                 <Datagrid
@@ -36,7 +37,7 @@ const TicketsList = () => {
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
-                    {record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : null}
+                    <WithRecord label="download" render={record => record.paymentStatus === 'SOLD' ? (<Button  label='Download'/>) : null} />
                 </Datagrid>
             )}
         </List>
