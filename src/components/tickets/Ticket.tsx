@@ -1,19 +1,27 @@
 import QRCode from "react-qr-code";
-import { PDFExport } from '@progress/kendo-react-pdf';
 import reactLogo from './../../assets/Ticket.svg'
 import '../../app/App.css'
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
+import { useRef } from 'react';
 
-function Ticket() {
+function Ticket(props: TicketProps) {
+    const contentArea = useRef(null);
+
+    const ticketNo = props.id.toString().length === 1 ? '0' + props.id : props.id
+
+    // @ts-ignore
+    savePDF(contentArea.current, { paperSize: "A4" });
+
 
     return (
         <>
             <div>
-                <div className="app-content">
+                <div className="app-content" ref={contentArea}>
                     <PDFExport paperSize="A4">
                         <div>
                             <div className={"ticket"}>
                                 <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
-                                <div className={"ticket-number"}>No. 0000 0062</div>
+                                <div className={"ticket-number"}>No. 0000 00{ticketNo}</div>
                             </div>
 
                             <div className={"ticket-qr-code"}>
@@ -31,3 +39,7 @@ function Ticket() {
 }
 
 export default Ticket
+
+export interface TicketProps {
+    id: number;
+}

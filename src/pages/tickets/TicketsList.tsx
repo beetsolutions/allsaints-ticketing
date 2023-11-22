@@ -4,14 +4,17 @@ import {
     List,
     TextField,
     Button,
-    WithRecord,
-    RaRecord
+    WithRecord
 } from 'react-admin';
+import Ticket from "../../components/tickets/Ticket";
 
 import TicketsEditEmbedded from './TicketsEditEmbedded';
 
-const handleDownload = (record: RaRecord) => {
-    console.log(record)
+const handleDownload = (id: number) => {
+    const TicketProps = {
+       id: id
+    };
+    <Ticket {...TicketProps} />
 };
 
 const TicketsList = () => {
@@ -27,7 +30,7 @@ const TicketsList = () => {
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={() => handleDownload(record)}  label='Download'/>) : null} />
+                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={() => handleDownload(record.id)}  label='Download'/>) : null} />
             </Datagrid>
             ) : (
                 <Datagrid
@@ -40,7 +43,7 @@ const TicketsList = () => {
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
-                    <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => handleDownload(record)}  label='Download'/>) : null} />
+                    <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => handleDownload(record.id)}  label='Download'/>) : null} />
                 </Datagrid>
             )}
         </List>
@@ -48,3 +51,4 @@ const TicketsList = () => {
 };
 
 export default TicketsList;
+
