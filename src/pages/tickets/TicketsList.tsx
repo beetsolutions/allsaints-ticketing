@@ -5,6 +5,7 @@ import {
     List,
     SimpleList,
     TextField,
+    Button
 } from 'react-admin';
 
 import TicketsEditEmbedded from './TicketsEditEmbedded';
@@ -23,10 +24,11 @@ const TicketsList = () => {
                 <Datagrid
                     expand={<TicketsEditEmbedded />}
                     optimized
+                    isRowSelectable={row => false}    
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                <TextField source="type" />
+                <Button  label='Download'/>
             </Datagrid>
             ) : (
                 <Datagrid
@@ -40,7 +42,7 @@ const TicketsList = () => {
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
-                    <TextField source="notes" />
+                    <Button  label='Download'/>
                 </Datagrid>
             )}
         </List>
