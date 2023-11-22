@@ -24,8 +24,8 @@ const TicketsList = () => {
         >
             {useMediaQuery((theme: Theme) => theme.breakpoints.down('md')) ? (
                 <SimpleList
-                    secondaryText={record => record.id}
-                    primaryText={record => record.price}
+                    secondaryText={<TextField source="id" />}
+                    primaryText={record => `${record.views} views`}
                     linkType={record => record.paymentStatus!== 'SOLD' ? "edit" : "show"} 
                     rowStyle={postRowStyle}
                 />
