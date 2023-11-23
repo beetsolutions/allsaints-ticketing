@@ -36,6 +36,7 @@ const App = () => (
             <Route path="/configuration" element={<Configuration/>}/>
             <Route path="/configuration" element={<Configuration/>}/>
             <Route path="/sold-tickets" element={<Tickets />} />
+            <Route path="/sold-tickets/ticket/:id" element={<Tickets />} />
             <Route path="/ticket/:id/:type" element={<Ticket />} />
         </CustomRoutes>
         <Resource name="tickets" {...tickets} />
