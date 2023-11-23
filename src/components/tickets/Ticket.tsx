@@ -14,14 +14,14 @@ function Ticket() {
     const ticketNo = id.toString().length === 1 ? '0' + id.toString() : id.toString()
 
     // @ts-ignore
-    savePDF(contentArea.current, { paperSize: "A4" });
+    //savePDF(contentArea.current, { paperSize: "A4" });
 
 
     return (
         <>
             <div>
                 <div className="app-content" ref={contentArea}>
-                    <PDFExport paperSize="A4">
+{/*                     <PDFExport paperSize="A4">
                         <div>
                             <div className={"ticket"}>
                                 <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
@@ -35,7 +35,7 @@ function Ticket() {
                                 />
                             </div>
                         </div>
-                    </PDFExport>
+                    </PDFExport> */}
                 </div>
             </div>
         </>
