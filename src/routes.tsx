@@ -6,7 +6,7 @@ const Routing = () => {
     return (
         <>
             <Routes>
-                <Route path="/ticket/:id" element={Ticket}/>
+                <Route path="/ticket/:id" element={<Ticket />}/>
                 <Route path="/tickets" element={<Tickets />} />
             </Routes>
         </>
