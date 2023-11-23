@@ -29,6 +29,8 @@ const TicketsList = () => {
                 // @ts-ignore
                 savePDF(contentArea.current, { paperSize: "A4" });
 
+                console.log('I was here!')
+
     }
 
     return (
@@ -45,7 +47,7 @@ const TicketsList = () => {
                 <TextField source="paymentStatus" />
                 <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={() => ticket(record.id)}  label='Download'/>) : null} />
             
-            <div hidden>
+            <div>
                 <div className="app-content" ref={contentArea}>
                     <PDFExport paperSize="A4">
                         <div>
