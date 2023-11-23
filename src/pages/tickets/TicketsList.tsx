@@ -73,7 +73,34 @@ const TicketsList = () => {
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={() => ticket(record.id)}  label='Download'/>) : null} />
+                
+                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={
+                    // @ts-ignore
+                    () => savePDF(contentArea.current, { paperSize: "A4" }
+
+                    
+                )}  label='Download'/>) : null} />
+            
+            <div hidden>
+                <div className="app-content" ref={contentArea}>
+                    <PDFExport paperSize="A4">
+                        <div>
+                            <div className={"ticket"}>
+                                <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
+                                <div className={"ticket-number"}>No. 0000 00</div>
+                            </div>
+    
+                            <div className={"ticket-qr-code"}>
+                                <QRCode
+                                    className={"qr-code"}
+                                    value={"Ticket number: " + "" + " is: " + "VALID"}
+                                />
+                            </div>
+                        </div>
+                    </PDFExport>
+                </div>
+            </div>
+
             </Datagrid>
             ) : (
                 <Datagrid
