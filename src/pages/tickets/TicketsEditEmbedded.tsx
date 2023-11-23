@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
-import {Edit, Identifier, SimpleForm, TextInput, required, useRecordContext} from 'react-admin';
+import {Edit, Identifier, SimpleForm, TextInput, required, useRecordContext, Toolbar, SaveButton} from 'react-admin';
 import {RichTextInput, RichTextInputToolbar} from "ra-input-rich-text";
+
+const UserEditToolbar = (props: any) => (
+    <Toolbar {...props} >
+        <SaveButton/>
+    </Toolbar>
+);
 
 const TicketsEditEmbedded = ({ id }: { id?: Identifier }) => {
 
@@ -9,7 +15,7 @@ const TicketsEditEmbedded = ({ id }: { id?: Identifier }) => {
     const disabledValue = record.paymentStatus === 'SOLD' ? true : false
     return (
         <Edit title=" " id={id}>
-            <SimpleForm>
+            <SimpleForm toolbar={<UserEditToolbar />}>
                 <TextInput name="paymentStatus" source="paymentStatus" validate={[required()]} disabled={disabledValue}/>
                 <TextInput name="usageStatus" source="usageStatus" validate={[required()]} disabled={disabledValue} />
                 <TextInput name="price" source="price" validate={[required()]} disabled={disabledValue}/>
