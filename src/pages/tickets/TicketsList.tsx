@@ -13,11 +13,9 @@ import { useNavigate } from "react-router-dom";
 const TicketsList = () => {
 
     const navigate = useNavigate();
-    const ticket = (id: number) => {
 
-        const ticketNo = id.toString().length === 1 ? '0' + id : id
-
-        navigate("/ticket/"+id)
+    const ticket = (id: number, type: string) => {
+        navigate("/ticket/"+id +'/'+type)
     }
 
     return (
@@ -32,7 +30,7 @@ const TicketsList = () => {
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={() => ticket(record.id)}  label='Download'/>) : null} />
+                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
             </Datagrid>
             ) : (
                 <Datagrid
@@ -45,7 +43,7 @@ const TicketsList = () => {
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
-                    <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => ticket(record.id)}  label='Download'/>) : null} />
+                    <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
                 </Datagrid>
             )}
         </List>
@@ -53,4 +51,3 @@ const TicketsList = () => {
 };
 
 export default TicketsList;
-

@@ -19,7 +19,7 @@
 .ticket-number {
   padding: 2em;
   position: relative;
-  top: -200px;
+  top: -160px;
   left: 186px;
   font-size: small;
   color: #ffda7b;
@@ -27,22 +27,22 @@
 
 @media only screen and (max-width: 768px) {
   .ticket-number {
-    top: -140px;
-    left: 106px;
+    top: -150px;
+    left: 190px;
   }
 }
 
 .ticket-qr-code {
   padding: 2em;
   position: relative;
-  top: -300px;
+  top: -200px;
   right: 232px;
 }
 
 @media only screen and (max-width: 768px) {
   .ticket-qr-code {
-    top: -230px;
-    right: 14px;
+    top: -190px;
+    right: 40px;
     height: 150px;
     width: 140px;
   }

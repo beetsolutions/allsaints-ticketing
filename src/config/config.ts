@@ -201,7 +201,7 @@ export const authProvider: AuthProvider = {
         }
         return Promise.resolve();
     },
-    checkAuth: () => localStorage.getItem('auth') ? Promise.resolve() : Promise.reject(),
+    checkAuth: () => Promise.resolve(),
     getPermissions: () => Promise.resolve(),
     getIdentity: () => Promise.resolve(userIdentity)
 };
