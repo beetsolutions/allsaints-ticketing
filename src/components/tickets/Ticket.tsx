@@ -36,7 +36,7 @@ function Ticket() {
                         <div className={"ticket-qr-code"}>
                             <QRCode
                                 className={"qr-code"}
-                                value={"https://beetsolutions.github.io/allsaints-ticketing/#/sold-tickets/ticket/" +  id}
+                                value={"https://beetsolutions.github.io/allsaints-ticketing/#/tickets/" +  id}
                             />
                         </div>
                     </div>
