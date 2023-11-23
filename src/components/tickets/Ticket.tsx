@@ -6,7 +6,8 @@ import { useRef, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
 function Ticket() {
-
+    const pdfExportComponent = useRef(null);
+    const contentArea = useRef(null);
     const { id } = useParams();
     
      // @ts-ignore
@@ -14,8 +15,7 @@ function Ticket() {
 
 
 
-    const pdfExportComponent = useRef(null);
-    const contentArea = useRef(null);
+
 
     const onPdfExport = () => {
         // @ts-ignore

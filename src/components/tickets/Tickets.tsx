@@ -15,7 +15,7 @@ function Tickets() {
 
     const onSave = () => {
         // @ts-ignore
-        pdfExportComponent.current.save()
+        //pdfExportComponent.current.save()
     }
 
     const tickets = [
