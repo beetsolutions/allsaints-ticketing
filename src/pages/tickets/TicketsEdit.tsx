@@ -1,5 +1,11 @@
-import {Edit, required, SimpleForm, TextInput, useRecordContext} from 'react-admin';
+import {Edit, required, SimpleForm, TextInput, useRecordContext, Toolbar} from 'react-admin';
 import {RichTextInput, RichTextInputToolbar} from 'ra-input-rich-text';
+
+
+const UserEditToolbar = (props: any) => (
+    <Toolbar {...props} >
+    </Toolbar>
+);
 
 const TicketsEdit = () => {
 
@@ -9,7 +15,7 @@ const TicketsEdit = () => {
 
     return (
         <Edit>
-        <SimpleForm>
+        <SimpleForm toolbar={<UserEditToolbar />}>
             <TextInput name="id" disabled source="id"/>
             <TextInput name="paymentStatus" source="paymentStatus" validate={[required()]} disabled={disabledValue} />
             <TextInput name="usageStatus" source="usageStatus" validate={[required()]} disabled={disabledValue} />
