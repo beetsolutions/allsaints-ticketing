@@ -14,20 +14,28 @@ import QRCode from "react-qr-code";
 import reactLogo from './../../assets/Ticket.svg'
 import '../../app/App.css'
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
+
 
 
 const TicketsList = () => {
 
+    const [download, setDownload] = useState(false);
+
+
+    if(download) {
+            // @ts-ignore
+            savePDF(contentArea.current, { paperSize: "A4" });
+            setDownload(false);
+    }
     const contentArea = useRef(null);
 
     const ticket = (id: number) => {
 
         const ticketNo = id.toString().length === 1 ? '0' + id : id
 
-            // @ts-ignore
-    savePDF(contentArea.current, { paperSize: "A4" });
-    
+
+    setDownload(true);
         return (
             <>
             <div>
