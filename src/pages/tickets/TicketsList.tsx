@@ -27,6 +27,7 @@ const TicketsList = () => {
                     expand={<TicketsEditEmbedded />}
                     optimized
                     bulkActionButtons={false}  
+                    
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />

@@ -6,7 +6,6 @@ import TicketsShow from './TicketsShow';
 
 export default {
     list: TicketsList,
-    create: TicketsCreate,
     edit: TicketsEdit,
     show: TicketsShow,
     icon: PeopleIcon,
