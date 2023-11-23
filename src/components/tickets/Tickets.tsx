@@ -8,9 +8,14 @@ function Tickets() {
     const pdfExportComponent = useRef(null);
     const contentArea = useRef(null);
 
-    const onPdfExport= () => {
+    const onPdfExport = () => {
         // @ts-ignore
         savePDF(contentArea.current, { paperSize: "A4" });
+    }
+
+    const onSave = () => {
+        // @ts-ignore
+        pdfExportComponent.current.save()
     }
 
     const tickets = [
@@ -294,7 +299,7 @@ function Tickets() {
             {tickets.map((x, i) =>
                 <div key={i}>
                     <div id={"content-area"} className="app-content" ref={contentArea}>
-                        <PDFExport ref={pdfExportComponent} paperSize="A4">
+                        <PDFExport ref={onSave} paperSize="A4">
                             <div>
                                 <div className={"ticket"}>
                                     <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>

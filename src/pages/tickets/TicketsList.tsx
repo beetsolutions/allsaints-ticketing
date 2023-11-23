@@ -34,6 +34,11 @@ const TicketsList = () => {
 
     }
 
+    const onSave = () => {
+        // @ts-ignore
+        pdfExportComponent.current.save()
+    }
+
     return (
         <List
             sort={{ field: 'usageStatus', order: 'ASC' }}
@@ -50,7 +55,7 @@ const TicketsList = () => {
             
             <div>
                 <div className="app-content" ref={contentArea}>
-                    <PDFExport ref={pdfExportComponent} paperSize="A4">
+                    <PDFExport ref={onSave} paperSize="A4">
                         <div>
                             <div className={"ticket"}>
                                 <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
