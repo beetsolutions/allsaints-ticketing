@@ -7,36 +7,17 @@ import {
     WithRecord
 } from 'react-admin';
 import TicketsEditEmbedded from './TicketsEditEmbedded';
-import QRCode from "react-qr-code";
-import reactLogo from './../../assets/Ticket.svg'
 import '../../app/App.css'
-import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
-import { useRef } from 'react';
-
+import { useNavigate } from "react-router-dom";
 
 const TicketsList = () => {
 
-    const pdfExportComponent = useRef(null);
-    const contentArea = useRef(null);
-
+    const navigate = useNavigate();
     const ticket = (id: number) => {
 
         const ticketNo = id.toString().length === 1 ? '0' + id : id
 
-
-
-        console.log('I was here!')
-
-                // @ts-ignore
-                savePDF(contentArea.current, { paperSize: "A4" });
-
-                console.log('I was here!')
-
-    }
-
-    const onSave = () => {
-        // @ts-ignore
-        pdfExportComponent.current.save()
+        navigate("/ticket/"+id)
     }
 
     return (
@@ -52,27 +33,6 @@ const TicketsList = () => {
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
                 <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={() => ticket(record.id)}  label='Download'/>) : null} />
-            
-            <div>
-                <div className="app-content" ref={contentArea}>
-                    <PDFExport ref={onSave} paperSize="A4">
-                        <div>
-                            <div className={"ticket"}>
-                                <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
-                                <div className={"ticket-number"}>No. 0000 00</div>
-                            </div>
-    
-                            <div className={"ticket-qr-code"}>
-                                <QRCode
-                                    className={"qr-code"}
-                                    value={"Ticket number: " + "" + " is: " + "VALID"}
-                                />
-                            </div>
-                        </div>
-                    </PDFExport>
-                </div>
-            </div>
-
             </Datagrid>
             ) : (
                 <Datagrid

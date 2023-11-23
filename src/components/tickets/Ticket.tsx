@@ -2,12 +2,16 @@ import QRCode from "react-qr-code";
 import reactLogo from './../../assets/Ticket.svg'
 import '../../app/App.css'
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 
-function Ticket(props: TicketProps) {
+function Ticket() {
     const contentArea = useRef(null);
 
-    const ticketNo = props.id.toString().length === 1 ? '0' + props.id : props.id
+    const { id } = useParams();
+    
+     // @ts-ignore
+    const ticketNo = id.toString().length === 1 ? '0' + id.toString() : id.toString()
 
     // @ts-ignore
     savePDF(contentArea.current, { paperSize: "A4" });
