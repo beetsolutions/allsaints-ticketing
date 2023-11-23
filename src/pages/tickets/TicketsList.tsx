@@ -16,6 +16,7 @@ import { useRef } from 'react';
 
 const TicketsList = () => {
 
+    const pdfExportComponent = useRef(null);
     const contentArea = useRef(null);
 
     const ticket = (id: number) => {
@@ -49,7 +50,7 @@ const TicketsList = () => {
             
             <div>
                 <div className="app-content" ref={contentArea}>
-                    <PDFExport paperSize="A4">
+                    <PDFExport ref={pdfExportComponent} paperSize="A4">
                         <div>
                             <div className={"ticket"}>
                                 <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
