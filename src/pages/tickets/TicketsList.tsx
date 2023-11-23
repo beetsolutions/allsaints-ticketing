@@ -23,7 +23,7 @@ const TicketsList = () => {
         const ticketNo = id.toString().length === 1 ? '0' + id : id
 
         // @ts-ignore
-        savePDF(contentArea.current, { paperSize: "A4" });
+        //savePDF(contentArea.current, { paperSize: "A4" });
 
         console.log('I was here!')
 
