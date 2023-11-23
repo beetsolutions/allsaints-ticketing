@@ -6,7 +6,6 @@ import { useRef, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
 function Ticket() {
-    const contentArea = useRef(null);
 
     const { id } = useParams();
     
@@ -15,33 +14,42 @@ function Ticket() {
 
 
 
-    const ticket = () => {
-      // @ts-ignore
-      savePDF(contentArea.current, { paperSize: "A4" });
+    const pdfExportComponent = useRef(null);
+    const contentArea = useRef(null);
+
+    const onPdfExport = () => {
+        // @ts-ignore
+        savePDF(contentArea.current, { paperSize: "A4" });
     }
 
+    const onSave = () => {
+        // @ts-ignore
+        pdfExportComponent.current.save()
+    }
 
     return (
         <>
-            <div onClick={ticket}>
-                <div className="app-content" ref={contentArea}>
-                    <PDFExport paperSize="A4">
-                        <div>
-                            <div className={"ticket"}>
-                                <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
-                                <div className={"ticket-number"}>No. 0000 00{ticketNo}</div>
-                            </div>
+                    <div id={"content-area"} className="app-content" ref={contentArea}>
+                        <PDFExport ref={onSave} paperSize="A4">
+                            <div>
+                                <div className={"ticket"}>
+                                    <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
+                                    <div className={"ticket-number"}>No. 0000 00{ticketNo}</div>
+                                </div>
 
-                            <div className={"ticket-qr-code"}>
-                                <QRCode
-                                    className={"qr-code"}
-                                    value={"Ticket number: " + "" + " is: " + "VALID"}
-                                />
+                                <div className={"ticket-qr-code"}>
+                                    <QRCode
+                                        className={"qr-code"}
+                                        value={"Ticket number: "  + " is: " }
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    </PDFExport>
-                </div>
-            </div>
+                        </PDFExport>
+                    </div>
+                    <div className="button-area">
+                        <button onClick={onPdfExport}>Download</button>
+                    </div>
+
         </>
     )
 }
