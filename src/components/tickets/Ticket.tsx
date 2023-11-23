@@ -10,7 +10,7 @@ function Ticket() {
     const contentArea = useRef(null);
     const { id, type } = useParams();
 
-    const logo = type === 'DOUBLE' ? double : single
+    const logo = type === 'SINGLE' ? single : double
     
      // @ts-ignore
     const ticketNo = id.toString().length === 1 ? '0' + id.toString() : id.toString()
@@ -47,7 +47,3 @@ function Ticket() {
 }
 
 export default Ticket
-
-export interface TicketProps {
-    id: number;
-}
