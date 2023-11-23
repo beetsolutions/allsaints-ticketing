@@ -29,15 +29,15 @@ function Ticket() {
 
     return (
         <>
-                    <div id={"content-area"} className="app-content" ref={contentArea}>
+                    <div id={"content-area"} ref={contentArea}>
                         <PDFExport ref={onSave} paperSize="A4">
                             <div>
                                 <div className={"ticket"}>
-                                    <img src={reactLogo} className="logo react" alt="Christmas Ticket"/>
-                                    <div className={"ticket-number"}>No. 0000 00{ticketNo}</div>
+                                    <img src={reactLogo}  alt="Christmas Ticket"/>
+                                    <div >No. 0000 00{ticketNo}</div>
                                 </div>
 
-                                <div className={"ticket-qr-code"}>
+                                <div >
                                     <QRCode
                                         className={"qr-code"}
                                         value={"Ticket number: "  + " is: " }
