@@ -13,16 +13,16 @@ export const Dashboard = () => {
     return (
         <Grid container spacing={2} mt={1}>
             <Grid item xs={12} md={3}>
-                <NumberCard value={data.venueCapacity} title={'pos.dashboard.venue_capacity'}/>
+                <NumberCard value={"300"} title={'pos.dashboard.venue_capacity'}/>
             </Grid>
             <Grid item xs={12} md={3}>
                 <NumberCard value={"114"} title={'pos.dashboard.tickets_sold'}/>
             </Grid>
             <Grid item xs={12} md={3}>
-                <NumberCard title={'pos.dashboard.tickets_remaining'} value={data.remainingTickets}/>
+                <NumberCard title={'pos.dashboard.tickets_remaining'} value={"186"}/>
             </Grid>
             <Grid item xs={12} md={3}>
-                <MoneyCard title={'pos.dashboard.money_collected'} value={ '£' + data.moneyCollected}/>
+                <MoneyCard title={'pos.dashboard.money_collected'} value={"TBC"}/>
             </Grid>
             <Grid item xs={12} />
             <Grid item xs={12} md={4}>
