@@ -8,8 +8,8 @@ const TicketsEdit = () => {
             <TextInput name="id" disabled source="id"/>
             <TextInput name="paymentStatus" source="paymentStatus" validate={[required()]} />
             <TextInput name="usageStatus" source="usageStatus" validate={[required()]} />
-            <TextInput name="price" source="price" validate={[required()]} />
-            <TextInput name="type" source="type" validate={[required()]}/>
+            <TextInput name="price" source="price" validate={[required()]} disabled/>
+            <TextInput name="type" source="type" validate={[required()]} disabled/>
             <TextInput type={"hidden"} name="updatedByMemberId" source="updatedByMemberId"
                        validate={[required()]}
                        defaultValue={localStorage.getItem('id')}
