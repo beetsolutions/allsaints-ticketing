@@ -26,12 +26,17 @@ const TicketsList = () => {
                 <Datagrid
                     expand={<TicketsEditEmbedded />}
                     optimized
-                    bulkActionButtons={false}  
+                    bulkActionButtons={false}
+                    sx={{
+                        '& .RaDatagrid-rowCell': {
+                            color: '#000',
+                        },
+                    }}
                     
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
-                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button sx={{ color: "#fff", backgroundColor: "#560c0c", width: 100, height: 50}} type='submit' onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
+                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button type='submit' onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
             </Datagrid>
             ) : (
                 <Datagrid
