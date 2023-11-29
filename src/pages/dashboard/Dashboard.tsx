@@ -24,7 +24,10 @@ export const Dashboard = () => {
                 <NumberCard value={data.numberOfTicketsSold} title={'pos.dashboard.tickets_sold'} />
             </Grid>
             <Grid item xs={12} md={3}>
-                <NumberCard value={data.remainingTickets} title={'pos.dashboard.tickets_remaining'} />
+                <NumberCard value={data.totalSingleTicketsSold} title={'Remaining Single'} />
+            </Grid>
+            <Grid item xs={12} md={3}>
+                <NumberCard value={data.totalDoubleTicketsSold} title={'Remaining Double'} />
             </Grid>
             <Grid item xs={12} md={3}>
                 <MoneyCard value={"£" + data.moneyCollected} title={'pos.dashboard.money_collected'} />
