@@ -27,12 +27,6 @@ const TicketsList = () => {
                     expand={<TicketsEditEmbedded />}
                     optimized
                     bulkActionButtons={false}
-                    sx={{
-                        '& .RaDatagrid-rowCell': {
-                            color: '#000',
-                        },
-                    }}
-                    
             >
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
