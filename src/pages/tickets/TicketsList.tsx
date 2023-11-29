@@ -49,7 +49,7 @@ const TicketsList = () => {
                     <TextField source="usageStatus" />
                     <TextField source="type" />
                     <TextField source="price" />
-                    <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
+                    <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<button onClick={() => ticket(record.id, record.type)}>Download</button>) : null} />
                 </Datagrid>
             )}
         </List>
