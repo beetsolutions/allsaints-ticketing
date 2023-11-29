@@ -9,6 +9,7 @@ export const Dashboard = () => {
     const { data, isLoading, error, refetch } = useGetOne("tickets/stats", { id: 1 });
 
     console.log(data)
+    console.log('moneyCollected' + data.moneyCollected)
 
     return (
         <Grid container spacing={2} mt={1}>
