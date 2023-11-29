@@ -6,7 +6,7 @@ import {useGetOne} from "react-admin";
 
 export const Dashboard = () => {
 
-    const { data, isLoading, error, refetch } = useGetOne("stats", { id: 1 });
+    const { data, isLoading, error, refetch } = useGetOne("tickets/stats", { id: 1 });
 
     console.log(data)
 
