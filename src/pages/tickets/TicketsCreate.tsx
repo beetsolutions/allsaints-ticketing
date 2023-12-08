@@ -50,21 +50,27 @@ const TicketsCreate = () => {
                 warnWhenUnsavedChanges
                 toolbar={<ConstitutionEditToolbar permissions={permissions}/>}
             >
-                <FormTab label="tickets.form.summary" path="">
-                    <TextInput type={"hidden"} name="updatedByMemberId" source="updatedByMemberId"
-                               validate={[required()]}
-                               defaultValue={localStorage.getItem('id')}
-                               value={localStorage.getItem('id')}
-                    />
-                    <TextInput name="paymentStatus" source="paymentStatus" validate={[required()]}/>
-                    <TextInput name="usageStatus" source="usageStatus" validate={[required()]}/>
-                    <TextInput name="price" source="price" validate={[required()]}/>
-                    <TextInput name="type" source="type" validate={[required()]}/>
-                    <RichTextInput
-                        name="notes"
-                        source="notes" toolbar={<RichTextInputToolbar size="large"/>}
-                    />
-                </FormTab>
+                {localStorage.getItem('id') === '18' ? (
+                    <FormTab label="tickets.form.summary" path="">
+                        <TextInput type={"hidden"} name="updatedByMemberId" source="updatedByMemberId"
+                                   validate={[required()]}
+                                   defaultValue={localStorage.getItem('id')}
+                                   value={localStorage.getItem('id')}
+                        />
+                        <TextInput name="paymentStatus" source="paymentStatus" validate={[required()]}/>
+                        <TextInput name="usageStatus" source="usageStatus" validate={[required()]}/>
+                        <TextInput name="price" source="price" validate={[required()]}/>
+                        <TextInput name="type" source="type" validate={[required()]}/>
+                        <RichTextInput
+                            name="notes"
+                            source="notes" toolbar={<RichTextInputToolbar size="large"/>}
+                        />
+                    </FormTab>
+                ) : (
+                    <>You have no permission to create tickets</>
+                )
+                }
+
             </TabbedForm>
         </Create>
     );
