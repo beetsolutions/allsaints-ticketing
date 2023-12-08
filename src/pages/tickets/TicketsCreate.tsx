@@ -51,6 +51,11 @@ const TicketsCreate = () => {
                 toolbar={<ConstitutionEditToolbar permissions={permissions}/>}
             >
                 <FormTab label="tickets.form.summary" path="">
+                    <TextInput type={"hidden"} name="updatedByMemberId" source="updatedByMemberId"
+                               validate={[required()]}
+                               defaultValue={localStorage.getItem('id')}
+                               value={localStorage.getItem('id')}
+                    />
                     <TextInput name="paymentStatus" source="paymentStatus" validate={[required()]}/>
                     <TextInput name="usageStatus" source="usageStatus" validate={[required()]}/>
                     <TextInput name="price" source="price" validate={[required()]}/>
