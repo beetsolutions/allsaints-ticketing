@@ -2,6 +2,7 @@ import QRCode from "react-qr-code";
 import double from './../../assets/double.jpg'
 import single from './../../assets/single.jpg'
 import table5 from './../../assets/table5.jpg'
+import godfather from './../../assets/godfather.jpg'
 import '../../app/App.css'
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 import { useRef } from 'react';
@@ -16,7 +17,11 @@ function Ticket() {
         image = single
     } else if (type === 'DOUBLE') {
         image = double
-    } else {
+    }
+    else if (type === 'GOD_FATHER') {
+        image = godfather
+    }
+    else {
         image = table5
     }
     
