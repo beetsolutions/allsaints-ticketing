@@ -1,6 +1,7 @@
 import QRCode from "react-qr-code";
 import double from './../../assets/double.jpg'
 import single from './../../assets/single.jpg'
+import table5 from './../../assets/table5.jpg'
 import '../../app/App.css'
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 import { useRef } from 'react';
@@ -10,7 +11,14 @@ function Ticket() {
     const contentArea = useRef(null);
     const { id, type } = useParams();
 
-    const logo = type === 'SINGLE' ? single : double
+    let image
+    if (type === 'SINGLE') {
+        image = single
+    } else if (type === 'DOUBLE') {
+        image = double
+    } else {
+        image = table5
+    }
     
      // @ts-ignore
     const ticketNo = id.toString().length === 1 ? '0' + id.toString() : id.toString()
@@ -29,7 +37,7 @@ function Ticket() {
                 <PDFExport paperSize="A4">
                     <div >
                         <div className={"ticket"}>
-                            <img src={logo} style={{width: '100%'}} alt="Ticket Background"/>
+                            <img src={image} style={{width: '100%'}} alt="Ticket Background"/>
                                 <div className={"ticket-number"}>No. 0000 00{ticketNo}</div>
                             </div>
 
