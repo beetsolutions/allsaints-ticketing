@@ -50,6 +50,9 @@ function Ticket() {
                             <QRCode
                                 className={"qr-code"}
                                 value={"https://beetsolutions.github.io/allsaints-ticketing/#/ticket/" + id +  + "/" + type}
+                                size={150}
+                                style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                                viewBox={`0 0 150 150`}
                             />
                         </div>
                     </div>
