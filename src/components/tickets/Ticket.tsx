@@ -49,7 +49,7 @@ function Ticket() {
                         <div className={"ticket-qr-code"}>
                             <QRCode
                                 className={"qr-code"}
-                                value={"" +  id}
+                                value={"https://beetsolutions.github.io/allsaints-ticketing/#/ticket/" + id +  + "/" + type}
                             />
                         </div>
                     </div>
