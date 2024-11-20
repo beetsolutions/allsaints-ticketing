@@ -44,7 +44,7 @@ function Ticket() {
                         <div className={"ticket"}>
                             <img src={image} style={{width: '100%'}} alt="Ticket Background"/>
                                 <div className={"ticket-number"}>No. 0000 00{ticketNo}</div>
-                            </div>
+                        </div>
 
                         <div className={"ticket-qr-code"}>
                             <QRCode
