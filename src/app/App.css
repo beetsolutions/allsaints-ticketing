@@ -39,6 +39,12 @@
   right: 232px;
 }
 
+.ticket-qr-code-pdf {
+  padding: 6em;
+  position: relative;
+  top: 40px;
+}
+
 @media only screen and (max-width: 768px) {
   .ticket-qr-code {
     top: -190px;

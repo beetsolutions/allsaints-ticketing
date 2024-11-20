@@ -49,12 +49,21 @@ function Ticket() {
                         <div className={"ticket-qr-code"}>
                             <QRCode
                                 className={"qr-code"}
-                                value={"https://beetsolutions.github.io/allsaints-ticketing/#/ticket/" + id +  + "/" + type}
-                                size={150}
-                                style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                                viewBox={`0 0 150 150`}
+                                value={"https://beetsolutions.github.io/allsaints-ticketing/#/tickets/" + id}
                             />
                         </div>
+
+
+                        <div className={"ticket-qr-code-pdf"}>
+                            <QRCode
+                                className={"qr-code"}
+                                value={"https://beetsolutions.github.io/allsaints-ticketing/#/tickets/" + id}
+                                size={40}
+                                style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                                viewBox={`0 0 40 40`}
+                            />
+                        </div>
+                        
                     </div>
                 </PDFExport>
             </div>
