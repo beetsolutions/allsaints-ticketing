@@ -21,6 +21,7 @@ const TicketsList = () => {
     return (
         <List
             sort={{ field: 'usageStatus', order: 'ASC' }}
+            perPage={300}
         >
             {useMediaQuery((theme: Theme) => theme.breakpoints.down('md')) ? (
                 <Datagrid
