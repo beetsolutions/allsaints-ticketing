@@ -1,10 +1,10 @@
 import { useMediaQuery, Theme } from '@mui/material';
 import {
     Datagrid,
-    List,
     TextField,
     Button,
-    WithRecord
+    WithRecord,
+    InfiniteList
 } from 'react-admin';
 import TicketsEditEmbedded from './TicketsEditEmbedded';
 import '../../app/App.css'
@@ -19,9 +19,8 @@ const TicketsList = () => {
     }
 
     return (
-        <List
+        <InfiniteList
             sort={{ field: 'usageStatus', order: 'ASC' }}
-            perPage={300}
         >
             {useMediaQuery((theme: Theme) => theme.breakpoints.down('md')) ? (
                 <Datagrid
@@ -48,7 +47,7 @@ const TicketsList = () => {
                     <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
                 </Datagrid>
             )}
-        </List>
+        </InfiniteList>
     );
 };
 
