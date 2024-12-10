@@ -1,9 +1,11 @@
 import { useMediaQuery, Theme } from '@mui/material';
 import {
     Datagrid,
+    List,
     TextField,
     Button,
     WithRecord,
+    Pagination,
     InfiniteList
 } from 'react-admin';
 import TicketsEditEmbedded from './TicketsEditEmbedded';
@@ -18,9 +20,13 @@ const TicketsList = () => {
         navigate("/ticket/"+id +'/'+type)
     }
 
+    const TicketPagination = () => <Pagination rowsPerPageOptions={[10, 25, 50, 100, 300]} />;
+
     return (
-        <InfiniteList
+        <List
             sort={{ field: 'usageStatus', order: 'ASC' }}
+            pagination={<TicketPagination />}
+            perPage={300}
         >
             {useMediaQuery((theme: Theme) => theme.breakpoints.down('md')) ? (
                 <Datagrid
@@ -47,7 +53,7 @@ const TicketsList = () => {
                     <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
                 </Datagrid>
             )}
-        </InfiniteList>
+        </List>
     );
 };
 

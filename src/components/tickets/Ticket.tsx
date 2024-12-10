@@ -1,7 +1,12 @@
 import QRCode from "react-qr-code";
 import double from './../../assets/double.jpg'
 import single from './../../assets/single.jpg'
-import table5 from './../../assets/table5.jpg'
+import table140 from './../../assets/table140.jpg'
+import table260 from './../../assets/table260.jpg'
+import table360 from './../../assets/table360.jpg'
+import table400 from './../../assets/table400.jpg'
+import table450 from './../../assets/table450.jpg'
+import table600 from './../../assets/table600.jpg'
 import godfather from './../../assets/godfather.jpg'
 import '../../app/App.css'
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
@@ -21,8 +26,26 @@ function Ticket() {
     else if (type === 'GOD_FATHER') {
         image = godfather
     }
+    else if (type === 'TABLE_140') {
+        image = table140
+    }
+    else if (type === 'TABLE_260') {
+        image = table260
+    }
+    else if (type === 'TABLE_360') {
+        image = table360
+    }
+    else if (type === 'TABLE_400') {
+        image = table400
+    }
+    else if (type === 'TABLE_450') {
+        image = table450
+    }
+    else if (type === 'TABLE_600') {
+        image = table600
+    }
     else {
-        image = table5
+        image = table140
     }
     
      // @ts-ignore
