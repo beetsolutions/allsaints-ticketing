@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/allsaints-ticketing/static/css/main.e98d39fe.css",
-    "main.js": "/allsaints-ticketing/static/js/main.990eb29a.js",
+    "main.js": "/allsaints-ticketing/static/js/main.8d89c8ee.js",
     "static/js/950.2ac4c3fc.chunk.js": "/allsaints-ticketing/static/js/950.2ac4c3fc.chunk.js",
     "static/js/787.9b3fc76e.chunk.js": "/allsaints-ticketing/static/js/787.9b3fc76e.chunk.js",
     "static/media/Ticket.svg": "/allsaints-ticketing/static/media/Ticket.a4dcf4556fb31459acf612e40100a967.svg",
@@ -17,12 +17,12 @@
     "static/media/godfather.jpg": "/allsaints-ticketing/static/media/godfather.6c3e519d756440f42ac2.jpg",
     "index.html": "/allsaints-ticketing/index.html",
     "main.e98d39fe.css.map": "/allsaints-ticketing/static/css/main.e98d39fe.css.map",
-    "main.990eb29a.js.map": "/allsaints-ticketing/static/js/main.990eb29a.js.map",
+    "main.8d89c8ee.js.map": "/allsaints-ticketing/static/js/main.8d89c8ee.js.map",
     "950.2ac4c3fc.chunk.js.map": "/allsaints-ticketing/static/js/950.2ac4c3fc.chunk.js.map",
     "787.9b3fc76e.chunk.js.map": "/allsaints-ticketing/static/js/787.9b3fc76e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e98d39fe.css",
-    "static/js/main.990eb29a.js"
+    "static/js/main.8d89c8ee.js"
   ]
 }
