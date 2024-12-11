@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 
 import Logo from './Logo';
@@ -64,7 +65,12 @@ const Menu = ({dense = false}: MenuProps) => {
                     marginTop: 2
                 }}>
                 { open ?
-                    (<><Typography variant="inherit" color="primary"
+                    (<>
+                    
+                    <Grid container spacing={2}>
+  
+  <Grid item xs={6} md={4}>
+  <Typography variant="inherit" color="primary"
                                    sx={{
                                        color: '#fff',
                                        marginLeft: 0,
@@ -72,7 +78,13 @@ const Menu = ({dense = false}: MenuProps) => {
                                    }}
                     >
                         Powered by:
-                    </Typography><Logo/></>)
+                    </Typography>
+  </Grid>
+  <Grid item xs={6} md={8}>
+  <Logo/>
+  </Grid>
+</Grid>
+                    </>)
                     : null
                 }
             </Box>
