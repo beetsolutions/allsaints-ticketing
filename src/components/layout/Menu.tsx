@@ -67,9 +67,8 @@ const Menu = ({dense = false}: MenuProps) => {
                     (<><Typography variant="inherit" color="primary"
                                    sx={{
                                        color: '#fff',
-                                       marginLeft: 2,
-                                       marginBottom: 2,
-                                       marginTop: 4
+                                       marginLeft: 0,
+                                       marginBottom: 0,
                                    }}
                     >
                         Powered by:
