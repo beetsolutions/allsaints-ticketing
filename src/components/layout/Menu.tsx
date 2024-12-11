@@ -69,7 +69,7 @@ const Menu = ({dense = false}: MenuProps) => {
                     
                     <Grid container spacing={2}>
   
-                <Grid item xs={6} md={6}>
+                <Grid item xs={4} md={4}>
                     <Typography variant="inherit" color="primary"
                                    sx={{
                                        color: '#fff',
@@ -80,7 +80,7 @@ const Menu = ({dense = false}: MenuProps) => {
                         Powered by:
                     </Typography>
                 </Grid>
-                <Grid item xs={6} md={6}>
+                <Grid item xs={4} md={4}>
                     <Logo/>
                 </Grid>
             </Grid>
