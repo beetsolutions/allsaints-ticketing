@@ -51,7 +51,7 @@ const Login = () => {
             setLoading(true);
             login(auth)
                 .then((value: AuthValues) => {
-                    if (value.path == 'dashboard') {
+                    if (value.path === 'dashboard') {
                         navigate('/');
                     } else {
                         setPerformOtp(true);
