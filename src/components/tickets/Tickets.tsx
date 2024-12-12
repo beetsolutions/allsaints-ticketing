@@ -5,7 +5,7 @@ import '../../app/App.css'
 import { useRef } from 'react';
 
 function Tickets() {
-    const pdfExportComponent = useRef(null);
+    //const pdfExportComponent = useRef(null);
     const contentArea = useRef(null);
 
     const onPdfExport = () => {

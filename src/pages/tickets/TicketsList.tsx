@@ -5,8 +5,7 @@ import {
     TextField,
     Button,
     WithRecord,
-    Pagination,
-    InfiniteList
+    Pagination
 } from 'react-admin';
 import TicketsEditEmbedded from './TicketsEditEmbedded';
 import '../../app/App.css'

@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 
 import Logo from './Logo';
@@ -11,7 +10,6 @@ import {
     MenuProps,
     useSidebarState,
 } from 'react-admin';
-import {Typography} from "@mui/material";
 
 const Menu = ({dense = false}: MenuProps) => {
     const translate = useTranslate();

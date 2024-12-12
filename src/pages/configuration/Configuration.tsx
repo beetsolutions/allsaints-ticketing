@@ -11,6 +11,7 @@ const Configuration = () => {
     const [locale, setLocale] = useLocaleState();
     const [theme, setTheme] = useTheme();
 
+    console.log(theme);
     return (
         <Card>
             <Title title={translate('pos.configuration')} />
