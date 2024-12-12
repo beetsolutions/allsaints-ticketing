@@ -4,10 +4,11 @@ import TicketsEdit from './TicketsEdit';
 import TicketsList from './TicketsList';
 import TicketsShow from './TicketsShow';
 
-export default {
+const tickets = {
     list: TicketsList,
     create: TicketsCreate,
     edit: TicketsEdit,
     show: TicketsShow,
     icon: PeopleIcon,
 };
+export default tickets;
