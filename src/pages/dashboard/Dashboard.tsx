@@ -8,7 +8,7 @@ export const Dashboard = () => {
 
     const { data, isLoading, error, refetch } = useGetOne("tickets/stats", { id: 1 });
 
-
+    console.log(refetch);
 
     if (isLoading) { return  <CircularProgress size={25} thickness={2}/>; }
     if (error) { return <p>ERROR</p>; }

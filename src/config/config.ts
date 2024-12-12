@@ -74,6 +74,7 @@ if (!options.headers) {
         const { json, headers } = await httpClient(url, {
             headers: new Headers({ Authorization: `Bearer ${localStorage.getItem('auth')!!}` })
         });
+        console.log(headers);
         return {
             data: json
         };
@@ -165,7 +166,7 @@ export const authProvider: AuthProvider = {
                 if (response.status < 200 || response.status >= 300) {
                     throw new Error(response.statusText);
                 }
-                if (otp == undefined) {
+                if (otp === undefined) {
                     return {redirectTo: false};
                 } else {
                     return response.json()
