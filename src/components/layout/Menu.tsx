@@ -66,24 +66,7 @@ const Menu = ({dense = false}: MenuProps) => {
                 }}>
                 { open ?
                     (<>
-                    
-                    <Grid container spacing={2}>
-  
-                <Grid item xs={4} md={4}>
-                    <Typography variant="inherit" color="primary"
-                                   sx={{
-                                       color: '#fff',
-                                       marginLeft: 0,
-                                       marginBottom: 0,
-                                   }}
-                    >
-                        Powered by:
-                    </Typography>
-                </Grid>
-                <Grid item xs={4} md={4}>
-                    <Logo/>
-                </Grid>
-            </Grid>
+                    <span style={{color: "white"}}>Powered by:</span> <Logo/>
                     </>)
                     : null
                 }
