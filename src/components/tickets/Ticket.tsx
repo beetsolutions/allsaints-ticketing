@@ -8,6 +8,7 @@ import table400 from './../../assets/table400.jpg'
 import table450 from './../../assets/table450.jpg'
 import table600 from './../../assets/table600.jpg'
 import godfather from './../../assets/godfather.jpg'
+import memberticket from './../../assets/member.jpg'
 import '../../app/App.css'
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 import { useRef } from 'react';
@@ -45,7 +46,7 @@ function Ticket() {
         image = table600
     }
     else {
-        image = table140
+        image = memberticket
     }
 
     // @ts-ignore
@@ -54,7 +55,7 @@ function Ticket() {
     let nameTag
 
     if (type === 'MEMBER') {
-        nameTag = member
+        nameTag = "Mr & Mrs. " + member
     } else {
         nameTag = "No. 0000 00" + { ticketNo }
     }
