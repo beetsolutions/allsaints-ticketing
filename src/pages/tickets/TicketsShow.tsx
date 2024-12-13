@@ -14,6 +14,7 @@ const TicketsShow = () => {
                     <TextField source="paymentStatus" />
                     <TextField source="usageStatus" />
                     <TextField source="type" />
+                    <TextField source="member" />
                     <TextField source="price" />
                     <TextField source="notes" />
                 </Tab>

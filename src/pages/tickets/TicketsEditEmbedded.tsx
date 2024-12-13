@@ -20,6 +20,7 @@ const TicketsEditEmbedded = ({ id }: { id?: Identifier }) => {
                 <TextInput name="usageStatus" source="usageStatus" validate={[required()]} disabled={disabledValue} />
                 <TextInput name="price" source="price" validate={[required()]} disabled={disabledValue}/>
                 <TextInput name="type" source="type" validate={[required()]} disabled={disabledValue}/>
+                <TextInput name="member" source="member" disabled={disabledValue}/>
                 <TextInput type={"hidden"} name="updatedByMemberId"
                            source="updatedByMemberId"
                            validate={[required()]}

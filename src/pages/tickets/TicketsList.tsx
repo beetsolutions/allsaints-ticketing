@@ -36,6 +36,7 @@ const TicketsList = () => {
                 <TextField source="id" />
                 <TextField source="paymentStatus" />
                 <TextField source="type" />
+                <TextField source="member" />
                 <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<button type='submit' onClick={() => ticket(record.id, record.type)} >Download</button>) : null} />
             </Datagrid>
             ) : (
@@ -48,6 +49,7 @@ const TicketsList = () => {
                     <TextField source="paymentStatus" />
                     <TextField source="usageStatus" />
                     <TextField source="type" />
+                    <TextField source="member" />
                     <TextField source="price" />
                     <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
                 </Datagrid>
