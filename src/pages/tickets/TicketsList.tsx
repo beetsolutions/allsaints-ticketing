@@ -15,8 +15,8 @@ const TicketsList = () => {
 
     const navigate = useNavigate();
 
-    const ticket = (id: number, type: string) => {
-        navigate("/ticket/"+id +'/'+type)
+    const ticket = (id: number, type: string, member: string) => {
+        navigate("/ticket/"+id +'/'+type +'/'+member)
     }
 
     const TicketPagination = () => <Pagination rowsPerPageOptions={[10, 25, 50, 100, 300]} />;
@@ -37,7 +37,7 @@ const TicketsList = () => {
                 <TextField source="paymentStatus" />
                 <TextField source="type" />
                 <TextField source="member" />
-                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<button type='submit' onClick={() => ticket(record.id, record.type)} >Download</button>) : null} />
+                <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<button type='submit' onClick={() => ticket(record.id, record.type, record.member)} >Download</button>) : null} />
             </Datagrid>
             ) : (
                 <Datagrid
@@ -51,7 +51,7 @@ const TicketsList = () => {
                     <TextField source="type" />
                     <TextField source="member" />
                     <TextField source="price" />
-                    <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => ticket(record.id, record.type)}  label='Download'/>) : null} />
+                    <WithRecord label="Download" render={record => record.paymentStatus === 'SOLD' ? (<Button onClick={() => ticket(record.id, record.type, record.member)}  label='Download'/>) : null} />
                 </Datagrid>
             )}
         </List>
